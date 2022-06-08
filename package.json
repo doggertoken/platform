@@ -1,0 +1,27 @@
+{
+    "name": "dogger",
+    "version": "0.0.0",
+    "author": "Nathan Clark",
+    "license": "GPL-3.0",
+    "description": "Social media, but better.",
+    "private": "true",
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "contracts:node": "cd prcontractstocol && npx hardhat node --network hardhat",
+        "contracts:build": "cd contracts && npx hardhat compile",
+        "contracts:dev": "cd contracts && npx hardhat --network localhost deploy --watch",
+        "contracts:rinkeby": "cd contracts && npx hardhat --network rinkeby deploy",
+        "contracts:one": "cd contracts && npx hardhat --network mainnet deploy",
+        "ui:build": "cd ui && pnpm run prepare && npx svelte-kit build",
+        "ui:dev": "cd ui && npx svelte-kit dev",
+        "ui:preview": "cd ui && npx svelte-kit preview"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/natclark/dogger.git"
+    },
+    "bugs": {
+        "url": "https://github.com/natclark/dogger/issues"
+    },
+    "homepage": "https://github.com/natclark/dogger#readme"
+}
